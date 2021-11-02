@@ -30,15 +30,11 @@ for i in range(1,NUM_GAMES+1):
     player1.feed_reward(0.5)
     player2.feed_reward(0.5)
     scoreboard["Draw"] += 1
-  # print(game.board)
-  # print()
 
 print("Summary")
 print("Games played: %i" % NUM_GAMES)
 print(scoreboard)
 
-
-# print({k:v for k,v in sorted(player1.state_scores.items(),key=lambda x:x[1], reverse=True)})
 
 # Save states
 with open("tic_tac_toe/player1_states.json", "w") as f:

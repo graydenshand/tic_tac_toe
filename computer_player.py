@@ -16,17 +16,7 @@ class Computer(Player):
 
   def choose_position(self):
     positions = self.game.available_positions
-    if self.training and np.random.uniform(0,1) <= self.exp_rate:
-      # i, p_flag = 0, False
-      # index = 0
-      # while not p_flag and i < len(positions):
-      #   next_board = copy.deepcopy(self.game.board)
-      #   next_board[positions[i]] = self.mark
-      #   next_board_state = next_board.state
-      #   if next_board_state not in self.state_scores:
-      #     p_flag = True
-      #     index = i
-      #   i+= 1     
+    if self.training and np.random.uniform(0,1) <= self.exp_rate:  
       index = np.random.choice(range(len(positions)))   
       position = positions[index]
     else:
@@ -57,7 +47,6 @@ class Computer(Player):
     if self.game.board.state not in self.state_scores.keys():
       print(f"{self} Trying something new", self.game.board.state)
       self.state_scores[self.game.board.state] = 0
-    # print(f"{self} {position}")
 
     return position
 
